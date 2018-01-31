@@ -1,0 +1,20 @@
+arr=input()
+c='"'
+arr=arr.split(c)
+arr=arr[1:-1:2]
+for i in range(len(arr)):
+            c=int(0)
+            check=0
+            run=0
+            while(check==0):
+                check=1
+                for k in range(i):
+                    if(arr[k]==arr[i]):
+                        c+=1
+                        check=0
+                if c >= 1:
+                    if run == 1:
+                        arr[i] = arr[i][:-3]
+                    arr[i] += "("+str(c)+")"
+                    run=1
+print(arr)
